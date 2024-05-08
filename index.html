@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Creepster&family=Workbench&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Workbench", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "BLED" 0,
+                "SCAN" 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: black;
+        }
+
+        .container {
+            height: 600px;
+            width: 600px;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-image: url("https://images.unsplash.com/photo-1506157786151-b8491531f063?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG11c2ljfGVufDB8fDB8fHww");
+            background-size: cover;
+            position: relative;
+            /* opacity: 0.5; */
+        }
+
+        .head {
+            width: 100%;
+            height: 100px;
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: center;
+        }
+
+        .head h1 {
+            margin: 30px 10px;
+        }
+
+        .logo {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .container h2 {
+            height: 100px;
+            width: 100%;
+            text-align: center;
+            /* border: 2px solid black; */
+            font-size: 2.2rem;
+            margin: 30px 0;
+        }
+
+        .btn {
+            height: 100px;
+            width: 300px;
+            border-radius: 50px;
+            /* background-color: ; */
+            font-size: 1.7rem;
+            background-color: rgb(192, 47, 192);
+            color: white;
+        }
+
+        .loader {
+            height: 50px;
+            width: 50px;
+            border: 20px solid rgb(226, 171, 226);
+            position: absolute;
+            margin: 50% auto;
+            border-radius: 50%;
+            border-top: 20px solid transparent;
+            animation: spin 2s linear infinite;
+            display: none;
+
+
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        .playlist {
+            position: relative;
+            height: 450px;
+            width: 400px;
+            top: 30%;
+
+            position: absolute;
+            display: none;
+            background-color: purple;
+
+
+        }
+
+
+        .flex {
+            font-size: 1.2rem;
+            height: 400px;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .flex li {
+
+            display: flex;
+            width: 400px;
+            height: 40px;
+
+            padding: 20px 0;
+            padding-left: 10px;
+        }
+        .flex li :hover{
+            background-color: rgb(172, 115, 172);
+        }
+        
+        .flex li span {
+            margin: 0 10px;
+            font-size: 30px;
+            position: absolute;
+            right: 0%;
+        }
+
+        .change {
+            width: 400px;
+            background-color: black;
+        }
+
+        .senario {
+
+            text-align: center;
+            font-size: 25px;
+        }
+        @media screen and (max-width: 375px) {
+            .playlist {
+           
+            height: 400px;
+            width: 300px;
+            top: 30%;
+        }
+
+        .change {
+            width: 200px;
+            background-color: black;
+        }
+        .container {
+            height: 600px;
+            width: 400px;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+            background-image: url("https://images.unsplash.com/photo-1506157786151-b8491531f063?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG11c2ljfGVufDB8fDB8fHww");
+            background-size: cover;
+            position: relative;
+            /* opacity: 0.5; */
+        }
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head"><img class="logo"
+                src="./logo.webp" alt="">
+            <h1>Epic Mix</h1>
+        </div>
+        <h2>5 Great Songs!</h2>
+        <button class="btn">Get My List</button>
+        <div class="loader">
+
+        </div>
+        <div class="playlist">
+            <ul class="flex">
+                <li id="1" class="song">
+                    <h4>#How Far Is It To Bethlehem </h4><span><i class="fa-solid fa-circle-play "></i></span>
+                </li>
+                <li id="2"  class="song">
+                    <h4>#Celtic - Irish - Scottish </h4><span><i class="fa-solid fa-circle-play"></i></span>
+                </li>
+                <li id="3"  class="song">
+                    <h4>#English Poem</h4><span><i class="fa-solid fa-circle-play"></i></span>
+                </li>
+                <li id="4"  class="song">
+                    <h4>#Hark, The Herald Angels Sing </h4><span><i class="fa-solid fa-circle-play"></i></span>
+                </li>
+                <li id="5"  class="song">
+                    <h4>#How-far-is-it-to best </h4><span><i class="fa-solid fa-circle-play"></i></span>
+                </li>
+
+
+
+            </ul>
+            <input class="change" type="range" value="">
+            <div class="senario">
+                <i class="fa-sharp fa-solid fa-backward-fast previous"></i>
+                <i class="fa-solid fa-circle-play main"></i>
+                <i class="fa-solid fa-forward-fast next"></i>
+            </div>
+
+        </div>
+        <script>
+            document.querySelector(".btn").addEventListener("click", () => {
+                document.querySelector(".container").style.opacity = "0.5"
+                document.querySelector(".loader").style.display = "block"
+                setTimeout(() => {
+                    document.querySelector(".loader").style.display = "none"
+                    document.querySelector(".container").style.opacity = "1"
+                    document.querySelector(".playlist").style.display = "block"
+                }, 5000);
+
+            })
+
+
+
+
+
+
+            var songs = [
+                { name: "#How Far Is It To Bethlehem ", path: "song list/1.mp3" },
+                { name: "#Celtic - Irish - Scottish", path: "song list/2.mp3 " },
+                { name: "#English Poem", path: " song list/3.mp3 PlayList/" },
+                { name: "#Hark, The Herald Angels Sing", path: " song list/4.mp3 " },
+                { name: "#How-far-is-it-to best ", path: " song list/5.mp3" }
+
+            ]
+            var current = 0;
+            var currentsong = songs[current].path;
+            var audioElement = new Audio(currentsong);
+
+
+
+
+            var isplaying = false;
+            function toogleplay() {
+                isplaying ? audioElement.pause() : audioElement.play();
+            }
+
+
+            function playsongs(){
+                if (audioElement.pause() || audioElement.currentTime <= 0) {
+                    audioElement.play()
+                    // document.querySelector(".main").classList.toggle("fa-circle-play")
+                    // document.querySelector(".main").classList.toggle("fa-circle-pause")
+                    // document.querySelector(".flex i").classList.toggle("fa-circle-play")
+                    // document.querySelector(".flex i").classList.toggle("fa-circle-pause")
+                    // isplaying = true;
+
+                } else {
+                    audioElement.pause();
+
+                    // document.querySelector(".main").classList.toggle("fa-circle-pause")
+                    // document.querySelector(".main").classList.toggle("fa-circle-play")
+                    // document.querySelector(".flex i").classList.toggle("fa-circle-pause")
+                    // document.querySelector(".flex i").classList.toggle("fa-circle-play")
+                    // isplaying = false;
+                }
+            }
+            function updatesong(action) {
+               
+                audioElement.pause();
+                if (action === "next") {
+                    current++
+                    console.log(current)
+                    if(current > songs.length -1) current = 0
+                }
+                if (action === "previous") {
+                    current--
+                    if(current < 0) current = songs.length - 1
+                }
+                var currentsong = songs[current].path;
+           
+            audioElement.src = currentsong
+             
+                playsongs();
+
+            }
+
+
+
+            document.querySelector(".main").addEventListener("click", () => {
+
+                playsongs();
+
+
+            })
+            document.querySelector(".next").addEventListener("click",()=>{
+                 updatesong("next")
+                // playsongs();
+                
+            })
+       
+            document.querySelector(".previous").addEventListener("click",()=>{
+                 updatesong("previous")
+                // playsongs();
+                
+            })
+
+
+
+
+            var arr = Array.from(document.querySelectorAll(".playlist li"));
+            arr.forEach(element => {
+                element.addEventListener("click", function (evt) {
+                    id = parseInt(element.id);
+                    var spanchild = element.children[1];
+                    var ichild = spanchild.children[0];
+                    console.log(ichild)
+
+                    console.log(id)
+
+                    audioElement.src = (`song list/${id}.mp3`);
+                    audioElement.currentTime = 0;
+
+playsongs();
+
+                    ichild.classList.toggle("fa-circle-play")
+                    ichild.classList.toggle("fa-circle-pause")
+
+
+                    document.querySelector(".main").classList.toggle("fa-circle-play")
+                    document.querySelector(".main").classList.toggle("fa-circle-pause")
+                })
+            });
+
+
+           
+
+            var progressbar = document.querySelector(".change");
+
+            setInterval(() => {
+                progressbar.value = audioElement.currentTime;
+            }, 100);
+            progressbar.addEventListener("change", () => {
+                audioElement.currentTime = progressbar.value;
+            })
+
+
+        </script>
+</body>
+
+</html>
